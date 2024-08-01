@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>installation and configuration of a web server</title>
     <style>
+        html,
         body {
             margin: 0px;
             padding: 0px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
             background-color: black;
             color: #00FF00;
             font-family: monospace;
@@ -22,11 +29,16 @@
             font-weight: normal;
         }
 
-        #head {
+        header {
             margin-top: 10px;
             margin-right: 10px;
             display: flex;
             justify-content: flex-end;
+        }
+
+        main {
+            margin-bottom: 10px;
+            flex: 1;
         }
 
         .home,
@@ -49,12 +61,10 @@
         }
 
         footer {
-            bottom: 0px;
             width: 100%;
             background-color: #006400;
             color: #00FF00;
             text-align: center;
-            position: fixed;
         }
     </style>
     <script>
@@ -79,21 +89,26 @@
 </head>
 
 <body>
-    <div id="head">
+    <header>
         <button class="doc" onclick="goDoc()">doc</button>
         <button class="git" onclick="goGit()">git</button>
         <button class="home" onclick="goHome()">back</button>
-    </div>
-    <h1>installation and configuration of a web server</h1>
-    <h2>sergio lópez</h2>
-    <?php
-    echo "<p>Servidor: " . $_SERVER["SERVER_SOFTWARE"] . "</p>";
-    echo "<p>Raíz: " . $_SERVER["DOCUMENT_ROOT"] . "</p>";
-    ?>
-</body>
+    </header>
 
-<footer>
-    <h3>desarrollo web entorno servidor</h3>
-</footer>
+    <main>
+        <h1>installation and configuration of a web server</h1>
+        <h2>sergio lópez</h2>
+
+        <?php
+            echo "<p>Servidor: " . $_SERVER["SERVER_SOFTWARE"] . "</p>";
+            echo "<p>Raíz: " . $_SERVER["DOCUMENT_ROOT"] . "</p>";
+        ?>
+    </main>
+
+    <footer>
+        <h3>desarrollo web entorno servidor</h3>
+    </footer>
+
+</body>
 
 </html>
